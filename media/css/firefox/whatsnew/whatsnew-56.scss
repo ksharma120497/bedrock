@@ -1,0 +1,101 @@
+// This Source Code Form is subject to the terms of the Mozilla Public
+// License, v. 2.0. If a copy of the MPL was not distributed with this
+// file, You can obtain one at http://mozilla.org/MPL/2.0/.
+
+@import
+'../../pebbles/includes/lib',
+'../../hubs/sections';
+
+body {
+    @include open-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+.up-to-date-header {
+    text-align: center;
+
+    h1 {
+        @include font-size-level4;
+        background: url('/media/img/firefox/whatsnew_56/green-check.svg') left center no-repeat;
+        font-weight: bold;
+        margin: 0 auto;
+        padding: 12px 0 10px 60px;
+        display: inline-block;
+    }
+}
+
+.intro {
+    background: #0060df;
+    background: url('/media/img/firefox/whatsnew_56/fox-tail-header.png') top -340px center no-repeat,
+                linear-gradient(148deg, #0060df 7%, #0479f4 20%, #0681fc 27%, #02bdf1 60%, #01d3f0 67%, #05f0e6 100%);
+    color: #fff;
+    overflow-x: hidden;
+    padding: 60px 0;
+
+    p {
+        margin: 40px 0;
+    }
+
+    .intro-wrapper {
+        padding-top: 200px;
+        position: relative;
+
+        &:after {
+            @include at2x('/media/img/firefox/whatsnew_56/laptop.png', 100%, auto);
+            background-position: top left;
+            background-repeat: no-repeat;
+            content: '';
+            height: 175px;
+            left: 50%;
+            margin-left: -150px;
+            position: absolute;
+            top: 0;
+            width: 300px;
+        }
+    }
+
+    .intro-content {
+        text-align: center;
+    }
+
+    @media #{$mq-tablet} {
+        .intro-wrapper {
+            padding-top: 250px;
+
+            &:after {
+                height: 233px;
+                margin-left: -200px;
+                width: 400px;
+            }
+        }
+    }
+
+    @media #{$mq-desktop} {
+        .intro-wrapper {
+            padding-top: 0;
+
+            &:after {
+                height: 262px;
+                left: auto;
+                margin-left: 0;
+                right: 0;
+                width: 450px;
+            }
+        }
+
+        .intro-content {
+            text-align: left;
+            width: 45%;
+        }
+    }
+
+    @media #{$mq-desktop-wide} {
+        .intro-wrapper:after {
+            height: 319px;
+            width: 547px;
+        }
+    }
+}
